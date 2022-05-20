@@ -1,6 +1,9 @@
 import { StyleSheet, Text, View, StatusBar } from 'react-native'
 import React from 'react'
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'
+import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps'
+import { enableLatestRenderer } from 'react-native-maps';
+
+enableLatestRenderer();
 
 const App = () => {
   return (
@@ -14,12 +17,21 @@ const App = () => {
        provider={PROVIDER_GOOGLE}
        style={{flex:1}}
        region={{
-         latitude: -7.578130581350408, 
-         longitude: 110.80924118405656,
-         latitudeDelta: 0.01,
-         longitudeDelta: 0.01,
+         latitude: -7.587484248307722, 
+         longitude: 110.74905211426791,
+         latitudeDelta: 0.0025,
+         longitudeDelta: 0.0025,
        }}
      >
+       <Marker
+      // key={index}
+      coordinate={{
+        latitude: -7.587484248307722, 
+        longitude: 110.74905211426791,
+      }}
+      title={'Rumah Adrie & Erma'}
+      description={'Hello, Mampir yuk!'}
+    />
      </MapView>
     </View>
     </View>
